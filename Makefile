@@ -1,7 +1,7 @@
 NAME = fabriziopandini/pause
 VERSION = 0.1
 BASE = alpine scratch debian ubuntu centos
-TEST_TARGET = centos
+TEST_TARGET = alpine
 
 all: package
 
@@ -12,9 +12,12 @@ test_package:
 	@docker run --rm $(NAME):$(VERSION)-$(TEST_TARGET)
     
 tag: 
-	@$(foreach base,${BASE}, docker tag $(NAME):$(VERSION)-$(base) $(NAME):latest-$(base);) \ 
-	docker tag $(NAME):$(VERSION)-$(BASE[0]) $(NAME):latest 
+	@$(foreach base,${BASE},docker tag $(NAME):$(VERSION)-$(base) $(NAME):latest-$(base);) \
+	docker tag $(NAME):$(VERSION)-alpine $(NAME):latest 
     
 push: 
-	docker push $(NAME)
+	@docker push $(NAME)
 	
+rmi: 
+	@$(foreach base,${BASE},docker rmi $(NAME):$(VERSION)-$(base) $(NAME):latest-$(base);) \
+	docker rmi $(NAME):$(VERSION)-alpine $(NAME):latest 
