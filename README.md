@@ -6,7 +6,7 @@ When working with resource management solutions, like kubernetes, mesos or swarm
 
 The container exists in many variants:
 
-- `:latest`, `:latest-alpine` 
+- `:latest`, `:latest-alpine`, `:latest-alpine-dev`  
 - `:latest-centos`
 - `:latest-debian`
 - `:latest-ubuntu`
