@@ -1,6 +1,6 @@
 NAME = fabriziopandini/pause
-VERSION = 0.1
-BASE = alpine scratch debian ubuntu centos
+VERSION = 0.2
+BASE = alpine scratch debian ubuntu centos alpine-dev
 TEST_TARGET = alpine
 
 all: package

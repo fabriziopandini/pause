@@ -2,6 +2,7 @@ package main // import "github.com/fabriziopandini/pause"
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
@@ -18,4 +19,7 @@ func main() {
 	fmt.Println("Waiting for signals...")
 	s := <-c
 	fmt.Println("Got signal:", s)
+	if s == syscall.SIGKILL {
+		log.Fatal("SIGKILL!!!")
+	}
 }

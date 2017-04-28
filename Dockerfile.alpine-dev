@@ -1,0 +1,3 @@
+FROM fabriziopandini/alpine-dev
+COPY pause /
+CMD ["/pause"]
