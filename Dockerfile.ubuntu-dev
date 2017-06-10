@@ -1,3 +1,0 @@
-FROM fabriziopandini/ubuntu-dev
-COPY pause /
-CMD ["/pause"]

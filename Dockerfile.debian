@@ -1,3 +1,0 @@
-FROM debian
-COPY pause /
-CMD ["/pause"]
